@@ -1,14 +1,12 @@
 from datetime import datetime
-
-
 import telnetlib
 
 
-host = '192.168.0.50'
-inicio = int(input('Ingrese el numero inicial: '))
-final = int(input('Ingrese el numero final: '))
+host = input('Enter the IP address: ')
+init_range = int(input('Enter the first digit: '))
+final_range = int(input('Enter the last digit: '))
 startTime = datetime.now()
-for passw in range(inicio, final):
+for passw in range(init_range, final_range):
     currentTime = datetime.now()
 
     with telnetlib.Telnet(host) as tn:
